@@ -12,21 +12,23 @@ lang:   en
     - Written/ported &checkmark;
     - Parallelised &checkmark;
     - Optimised &checkmark;
-    - Using efficient I/O &checkmark;
-    - Using robust version control and software engineering practices &checkmark;
     - Tested, verified, and validated &checkmark;
+    - Using robust version control and software engineering practices &checkmark;
 </div>
 
 <div class=column>
 - Now let's do some science with it! 
 - How to run the code on large machines?
+
+![](images/LUMI_login.png)
+
 </div>
 
 
 # Accessing top-tier computing resources
 - Access even to Tier-0 supercomputers is usually **free for academic users**
 - No free lunch though – it is a **competitive** process!
-- Various national and international organisations, in particular
+- Various national and international organisations, in particular:
 
 <div class=column style=width:35%>
 ![](images/CSC_2012_LOGO.png)
@@ -54,7 +56,7 @@ lang:   en
    - 14 supercomputers
    - 10 quantum computers
 
-<img src="images/EuroHPC_Members_Map.png" align="right" />
+<img src="images/EuroHPC_Members_Map.png" align="right" width=47%/>
 </div>
 
 
@@ -64,10 +66,10 @@ lang:   en
    - LUMI through Finnish allocation
 - EuroHPC – students, researchers, businesses from eligible countries
    - Any EuroHPC system (LUMI, MareNostrum5, Jupiter, ...) 
-   - **Development** – get your code up to speed
-   - **Benchmark** – prove it runs well at scale
-   - **Regular** – large-scale campaign
-   - **Extreme** – hero runs
+   - **Development** – get your code up to speed (~4000 node-h)
+   - **Benchmark** – prove it runs well at scale (~2000 node-h)
+   - **Regular** – large-scale campaign (up to ~200,000 node-h)
+   - **Extreme** – hero runs (beyond ~200,000 node-h)
 - Pilot – new machines, for the brave
 
 
@@ -83,6 +85,7 @@ lang:   en
 
 
 # Procedure
+<div class=column style=width:42%>
 - Application and review
    - Technical evaluation
    - Scientific review
@@ -90,14 +93,92 @@ lang:   en
 - Project setup
 - Project operations
 - Reporting
+</div>
+
+<div class=column style=width:56%>
+<img src="images/EuroHPC_Regular_Access_cycle_2026.png" align=right width=100%/>
+</div>
 
 
+# Performance properties – on "paper"
 
-# Performance properties
+How do you ensure your code is performing well and not wasting these precious resources?
 
-- How do you ensure your code is performing well and not wasting these precious resources?
+Step 0: study the computing centre's recommendations
+- Hardware properties
+   - Number of threads
+   - Memory size and layout
+   - Network layout and properties
+- Software stack
+   - Compiler families and versions
+   - MPI implementations and versions
+   - Useful libraries
+
+
+# Performance properties – in practice
+- Investigate the optimal distribution of tasks, threads
+- Use a small but representative setup
+- Proceed systematically
+- Record your findings for future reference
+- Investigate if something feels off
+
+
+# Perfomance properties – scaling
+How efficiently is your code running in parallel?
+- Weak scaling:
+    - Start with a problem run on a single core/CPU/GPU/node
+    - Multiply **both** problem size **and** core/CPU/GPU/node count by *n*
+    - Plot execution time vs. problem size: **should be flat**
+- Strong scaling:
+    - Start with problem run on a small amount of resources
+    - Run fixed problem size with increasing amount of resources
+    - Plot execution time vs. amount of resources used: **should be inversely proportional**
+
 
 # General workflows
+
+- Many different ways of using HPC
+- Common steps/workflows:
+   - Building and testing
+   - Preparing the job
+   - Monitoring and profiling
+   - Troubleshooting
+
+# Building and testing
+
+# File system and data
+
+# Job input and output
+
+# Monitoring and profiling
+-  So, covering ideas like measure first where the bottleneck is before doing any optimization (could be I/O too).
+
+- Disk quotas
+- I/O performance
+- Computing performance
+- Memory footprint
+
+# Troubleshooting
+- In case of anomalies:
+    - Is my **code version** correct?
+    - Are my **compilation** parameters correct? Maybe recompile?
+    - Is my **job script** correct and up to date (run parameters, modules)?
+    - Check your **workflow** still matches best practices in the documentation!
+    - Ask your **team** colleagues to check if things work for them?
+- If you suspect system issues:
+    - Is a maintenance announced/under way?
+    - Is there an update on the system status page or mailing list?
+    - Is anyone else running/in queue?
+
+
+# In case of trouble: get help!
+- If you still suspect issues with the system or how you use it, **contact support**!
+    - Detailed description!
+    - Code, modules, job parameters
+    - Expected result/behaviour
+    - What is abnormal
+
+
 
 
 
@@ -108,20 +189,9 @@ lang:   en
 
 # Performance and optimisation
 
--  So, covering ideas like measure first where the bottleneck is before doing any optimization (could be I/O too).
 
 
-# Code deployment and production: scaling
 
-- How efficiently is your code running in parallel?
-- Weak scaling:
-    - Start with a problem run on a single core/CPU/GPU/node
-    - Multiply **both** problem size **and** core/CPU/GPU/node count by *n*
-    - Plot execution time vs. problem size: **should be flat**
-- Strong scaling:
-    - Start with problem run on a small amount of resources
-    - Run fixed problem size with increasing amount of resources
-    - Plot execution time vs. amount of resources used: **should be inversely proportional**
 
 
 # Case Vlasiator: Weak scaling on Mahti
@@ -235,26 +305,6 @@ lang:   en
         - Use available APIs to push notifications
 - **Do not spend 24/7 on the command line!**
 
-
-# Code deployment and production: troubleshooting
-- In case of anomalies:
-    - Is my **code version** correct?
-    - Are my **compilation** parameters correct? Maybe recompile?
-    - Is my **job script** correct and up to date (run parameters, modules)?
-    - Check your **workflow** still matches best practices in the documentation!
-    - Ask your **team** colleagues to check if things work for them?
-- If you suspect system issues:
-    - Is a maintenance announced/under way?
-    - Is there an update on the system status page or mailing list?
-    - Is anyone else running/in queue?
-
-
-# Code deployment and production: get help!
-- If you still suspect issues with the system, **contact support**!
-    - Detailed description!
-    - Code, modules, job parameters
-    - Expected result/behaviour
-    - What is abnormal
 
 
 # Quiz?
