@@ -6,35 +6,29 @@ lang:   en
 
 # Anatomy of a supercomputer
 
-Recall that supercomputer consists of *nodes* and *interconnects*
+<div class="column" style=width:58%>
+- Supercomputers consist of nodes connected by a high-speed network
+- A node can contain several multicore CPUs and several GPUs
+    - 8 GPUs per node in LUMI, 4 GPUs per node in Mahti and Roihu
+- All CPU memory within a node is shared
+- GPU memories within a node are distinct
+</div>
+<div class="column" style=width:38%>
+![](img/lumi.png){.center width=80%}
+<small>Lumi - Pre-exascale system in Finland</small>
+</div>
 
-![](img/anatomy.svg){.center}
+# Using multiple GPUs
 
----
+- Why to use multiple GPUs?
+    - Application requires more memory than a single GPU has
+    - Solve the problem faster than with single GPU
+- Using multiple GPUs requires:
+    - Coordinating the work between GPUs
+    - Moving data between GPUs
+- HIP/CUDA has functionality for intranode peer-to-peer data movement
+- MPI and RCCL/NCCL can be use both for intra- and internode data movement
 
-And even within a node there are more *nodes* and *interconnects*
-
-![](img/lumig-node-overview.svg){.center width=60%}
-
-- LUMI-G node
-  - Memory space per GCD
-  - CPUs share memory space (but access across is not uniform)
-
-
----
-
-
-::::::{.columns}
-:::{.column width=60%}
-* supercomputer are a collection of thousands of nodes
-* currently there are  2 to 8 GPUs per node
-* more GPU resources per node, better per-node-performance 
-:::
-:::{.column}
-
-![](img/lumi.png){.center width=100%}
-:::
-:::::: 
 
 # Multi-GPU Programming Models
 
@@ -44,21 +38,39 @@ And even within a node there are more *nodes* and *interconnects*
 | | One GPU per process | Many GPUs per process | One GPU per thread |
 |--|--|--|--|
 | Communication | MPI | HIP | HIP  |
-| Synchronization | MPI/HIP | HIP (streams)/OpenMP | OpenMP/HIP |
+| Synchronization | MPI/HIP | HIP (streams) | OpenMP/HIP (streams) |
 | | ![](img/single_proc_mpi_gpu2.png){width=100%} | ![](img/single_proc_multi_gpu.png){width=100%} | ![](img/single_proc_thread_gpu.png){width=100%} | 
 
 
 # One GPU per Process
 
 - Simple porting:
-  - Each task assumes one GPU
-  - No GPU device selection
-- Set prior to executing binary
+  - Each process assumes one GPU
+  - No GPU device selection within program
+-  Communication between GPUs with MPI or RCCL/NCCL
+-  Works with arbitrary number of GPUs
+  - Same programming approach for inter- and intranode data movement
+- Very similar MPI programming as with CPUs
+
+# One GPU per process: LUMI-G
+
+- Set environment variables prior to executing binary
   - `export ROCR_VISIBLE_DEVICES=$SLURM_LOCALID` on [LUMI-G](https://docs.lumi-supercomputer.eu/runjobs/scheduled-jobs/lumig-job/)
+  - `select_gpu` script:
+```shell
+#!/bin/bash
+export ROCR_VISIBLE_DEVICES=$SLURM_LOCALID
+exec $*
+```
+  - `srun ... ./select_gpu <my_binary>`
+- Enable GPU support in MPI
+  - `export MPICH_GPU_SUPPORT_ENABLED=1`
+
+# One GPU per process: Roihu?? TODO
+
+- Environment variable:
   - `CUDA_VISIBLE_DEVICES` on Roihu
-- MPI implementation must be *GPU-aware*
-  - LUMI-G: `export MPICH_GPU_SUPPORT_ENABLED=1`
-- GPUs may be on different nodes
+- `--gpus-per-task` slurm flag ??
 
 # Many GPUs per Process
 
