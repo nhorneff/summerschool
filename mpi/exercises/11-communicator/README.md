@@ -9,8 +9,8 @@ process has a data vector with the following data:
 In addition, each task has a receive buffer for eight elements and the
 values in the buffer are initialized to -1.
 
-Implement now a pattern with user defined communicators and collective
-operation so that the receive buffers will have the following values:
+Implement now a pattern with user defined communicators and **a single collective
+operation** so that the receive buffers obtain following values:
 
 ![](img/comm-split-reduce.svg)
 

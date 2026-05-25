@@ -33,7 +33,7 @@ Afterwards, use `MPI_Get_count` to obtain the actual message length and print it
 - The example program still prints out the full receive buffer.
 Run the program a few times and investigate the last few entries of the receive buffer.
 
-Think about the benefits and downsides of both approaches.
+Think about the benefits and downsides of the two approaches.
 
 
 ### Bonus technical information
@@ -49,8 +49,8 @@ corresponding to the (shorter) message are modified."
 
 This means that the programmer is responsible for allocating a receive buffer that is *at least*
 as large as the incoming message. Receiving just a small part of an incoming message is not possible with `MPI_Recv`.
-Both `OpenMPI` and `MPICH` implementations fail with `MPI_ERR_TRUNCATE` if the buffer is too small for the full message.
+Both OpenMPI and MPICH implementations fail with `MPI_ERR_TRUNCATE` if the buffer is too small for the full message.
 
 However, it is completely allowed to use a receive buffer that is "too large". This can be useful in some situations.
-Eg: your program may allocate a large buffer and use it to receive messages of varying sizes,
+For example, your program may allocate a large buffer and use it to receive messages of varying sizes,
 without having to constantly reallocate the buffer.

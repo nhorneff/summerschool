@@ -3,11 +3,10 @@
 # Parallel calculation of π
 
 Starting from the serial code or your solution from [the earlier parallel pi exercise](../parallel-pi-two-procs), make a version
-that performs the calculation parallel with any number of processes.
+that performs the calculation in parallel using any given number of processes.
 
 1. Divide the range over N in `ntasks`, so that rank 0 does i=1, 2, ..., N / ntasks, rank 1 does
-   i=N / ntasks + 1, N / ntasks + 2, ... , *etc.*. You
-   may assume that N is evenly divisible by the number of processes.
+   i=N / ntasks + 1, N / ntasks + 2, ... , *etc.*. For starters, you may assume that N is evenly divisible by the number of processes.
 
 2. All tasks calculate their own partial sums
 
@@ -22,5 +21,4 @@ that performs the calculation parallel with any number of processes.
   If not, can you explain why?
 
 6. (Bonus) Make a version that works with arbitrary number of processes. Now,
-  if N cannot be divided evenly by `ntasks`, some processes
-  calculate more terms than others.
+  if N cannot be divided evenly by `ntasks`, some processes must calculate more terms than others.

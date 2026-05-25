@@ -18,4 +18,4 @@ See [the earlier message chain exercise](../message-chain) for the description o
    `MPI_Send`s and `MPI_Recv`'s and pay attention
    especially to rank 0. Can you explain the behaviour?
 
-3. Write a version that uses `MPI_Waitall` instead of `MPI_Wait`s.
+3. Write a version that uses `MPI_Waitall` instead of doing many calls to `MPI_Wait`.

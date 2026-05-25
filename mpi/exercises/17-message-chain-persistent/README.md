@@ -10,4 +10,4 @@ See [the earlier message chain exercise](../message-chain) for the description o
    your solution from [the earlier message chain exercise](../message-chain)
    as a starting point.
 
-2. Write a version that uses `MPI_Startall` and `MPI_Waitall` instead of `MPI_Start`s and `MPI_Wait`s.
+2. Write a version that uses `MPI_Startall` and `MPI_Waitall` instead of doing multiple calls to `MPI_Start` and `MPI_Wait`.

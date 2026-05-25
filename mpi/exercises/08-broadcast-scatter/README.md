@@ -2,13 +2,14 @@
 
 # Broadcast and scatter
 
-This exercises illustrates the collective communication operations and their benefits over point-to-point communication routines.
-Your task is to write a program using send and receive calls to implement *broadcast* and *scatter* operations.
+This exercises demonstrates the use of collective communication routines and their benefits over point-to-point communication routines.
+Your task is to write a program using send and receive calls to implement *broadcast* and *scatter* operations,
+then re-implement the same logic using MPI collectives.
 
 1. Examine, compile, and run the provided skeleton code with 4 MPI tasks ([skeleton.cpp](skeleton.cpp) or [skeleton.F90](skeleton.F90)).
    This code does the following:
    - Creates an integer array of size N (e.g. N=12) and initializes it using `init_buffer()` as follows:
-      - rank 0: i (i=1,12)
+      - rank 0: i (i=1, ..., 12)
       - other ranks: -1
    - Prints out the values in order in all the processes using `print_buffer()`
    You don't need to edit these helper functions.
