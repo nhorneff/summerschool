@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 CSC - IT Center for Science Ltd. <www.csc.fi>
+//
+// SPDX-License-Identifier: MIT
+
 /*
  * This code calculates digits of PI in hexadecimal using
  * Bailey-Borwein-Plouffe formula.

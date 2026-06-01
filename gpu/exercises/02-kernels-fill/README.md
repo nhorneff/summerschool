@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2026 CSC - IT Center for Science Ltd. <www.csc.fi>
+
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
 ## Exercise: Kernel for filling a 1D array with a value
 
 So far we've mostly concerned ourselves with checking for errors. Can we finally do something more interesting?

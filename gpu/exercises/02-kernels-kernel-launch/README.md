@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2026 CSC - IT Center for Science Ltd. <www.csc.fi>
+
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
 ## Exercise: Launching a kernel
 
 Now you know how to compile HIP code. Great!

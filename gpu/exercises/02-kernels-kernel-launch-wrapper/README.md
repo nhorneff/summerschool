@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2026 CSC - IT Center for Science Ltd. <www.csc.fi>
+
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
 ## Exercise: Error reporting from kernel launch
 
 If a kernel launch configuration parameter (number of threads/blocks or the amount of shared memory) is incorrect,

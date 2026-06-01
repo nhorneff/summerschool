@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2026 CSC - IT Center for Science Ltd. <www.csc.fi>
+
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
 # Calculating digits of π with Bailey-Borwein-Plouffe formula and the Spigot algorithm
 
 The code in `bbp-pi.cpp` calculates digits of π using the Bailey-Borwein-Plouffe (BBP) series [1]

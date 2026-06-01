@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2026 CSC - IT Center for Science Ltd. <www.csc.fi>
+
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
 ## Exercise: Re-use threads in a 1D kernel with a for loop
 
 Finally we did something other than just check for errors!
