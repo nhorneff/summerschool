@@ -13,7 +13,7 @@ are to be written as HDF5 datasets using different layouts.
 
 The main function calls some unfinished functions. Your task is to implement them as instructed below.
 
-See [`hdf5-exercise-instructions](hdf5-exercise-instructions.md) for instructions for compiling the code.
+See [hdf5-exercise-instructions](hdf5-exercise-instructions.md) for instructions for compiling the code.
 
 ## Part 1
 
