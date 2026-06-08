@@ -68,6 +68,9 @@ The same `Makefile` can also build our model solutions using the optional
 `SOLUTION` variable. Examples:
 - Under the [`cpp`](cpp/) or [`Fortran`](fortran/) directories: `make SOLUTION=solution-send-recv`
 - Under the [`c`](c/) directory: `make SOLUTION=solution`
+- Build the serial implementation for C++ or Fortran: `make SOLUTION=serial`
+
+
 
 ### Using sendrecv
 
