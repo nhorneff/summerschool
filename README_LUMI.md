@@ -61,6 +61,11 @@ For editing program source files you can use e.g. the *nano* editor:
 Also other popular editors such as *emacs* and *vim* are available.
 
 
+## Web interface
+
+- LUMI web interface can be accessed through <https://www.lumi.csc.fi>
+
+
 ## Compiling
 
 ### CPU programming
