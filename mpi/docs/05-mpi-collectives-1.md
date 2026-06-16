@@ -10,6 +10,10 @@ event:  CSC Summer School in High-Performance Computing 2026
 lang:   en
 ---
 
+# Recap / quizz
+
+TODO: Menti access code / QR code
+
 # Outline
 
 - Introducing collective communication in MPI
