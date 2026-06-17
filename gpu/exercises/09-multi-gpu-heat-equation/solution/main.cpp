@@ -76,6 +76,7 @@ int main(int argc, char **argv)
     stop_clock = MPI_Wtime();
 
     /* Average temperature for reference */
+    hipMemcpy(previous.data, gpu_previous.data, sizeof(double)*(current.nx+2)*(current.ny+2), hipMemcpyDefault);
     average_temp = average(&previous);
 
     /* Determine the CPU time used for the iteration */
@@ -88,7 +89,6 @@ int main(int argc, char **argv)
     }
 
     /* Output the final field */
-    hipMemcpy(previous.data, gpu_previous.data, sizeof(double)*(current.nx+2)*(current.ny+2), hipMemcpyDefault);
     write_field(&previous, nsteps, &parallelization);
 
     finalize(&current, &previous);
