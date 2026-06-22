@@ -5,10 +5,28 @@ SPDX-License-Identifier: CC-BY-4.0
 -->
 
 ---
-title:  Welcome to Nuuksio
+title:  Welcome to Summer School
 event:  CSC Summer School in High-Performance Computing 2026
 lang:   en
 ---
+
+# CSC Summer School in High-Performance Computing {.section}
+
+# It's 15th CSC Summer School in HPC!
+
+<br>
+<br>
+<center>
+2010, 2011, 2012, 2013, 2014,<br>
+2015, 2016, 2017, 2018, 2019,<br>
+<del>2020</del>, <del>2021</del>,<br>
+[2022](https://csc.fi/en/news/the-summer-school-is-built-on-learning-high-performance-computing-and-doing-things-together/),
+[2023](https://csc.fi/en/story/summer-school-brings-together-learners-interested-in-high-performance-computing/),
+[2024](https://csc.fi/en/story/csc-summer-school-2024-high-performance-computing-in-nuuksio-national-park/),
+[2025](https://csc.fi/en/story/summer-school-brings-together-computing-collaboration-and-nature/),
+2026!
+</center>
+
 
 # Where are we? {.section}
 
@@ -41,29 +59,32 @@ Map: <https://www.retkikartta.fi/> (Good for hiking!)
 ![](img/map_inside.svg){.center width=55%}
 </div>
 
-# Getting around
-
-- All lectures and exercises will take place in **Kelohonka** room
-- Breakfast, lunch, and dinner will be served in **Nuuksion Tupa** restaurant
-- Special events (see [schedule](https://github.com/csc-training/summerschool)):
-  - Get together and lighting talks on Tue 23.6. at 19:30 in **Loimu** room
-  - **Lake Sauna** reserved for us on Wed 24.6., Fri 26.6., and Mon 29.6. from 20:00--
-  - Farewell dinner will be served in **Hopeapaju** room on Wed 1.7. from 19:00--
-- Feel free to use hotel facilities at all times
-  - Indoor sauna and pool can be used if there is no private bookings
-
-# Outdoor activities (and indoors too)
-
-- Time reserved on most days for free-form activities before dinner at 17:00--18:00
-  - Good chance to socialize and get out of the computer!
-- Special guided outdoor activities:
-  - Wed 24.6. 16:30--18:00: Nuuksio Olympic Games
-  - Wed 1.7. 16:00--18:00: Boating at the lake
-- Free access to hotel gym, rowing boats, tennis rackets, mölkky games, etc.
-- Hiking trails to Nuuksio National Park leave right from the hotel yard
-  - <https://www.luontoon.fi/en/destinations/nuuksio-national-park>
 
 # Practicalities {.section}
+
+# Logistics
+
+- Schedule: <https://github.com/csc-training/summerschool>
+  - All lectures and exercises will take place in **Kelohonka** room
+  - Breakfast, lunch, and dinner will be served in **Nuuksion Tupa** restaurant
+  - Free-form (outdoor) activities before dinner<br>
+    &rarr; Good chance to socialize and get out of the computer!
+- Feel free to use hotel facilities at all times
+  - Free access to hotel gym, rowing boats, tennis rackets, mölkky games, etc.
+  - Indoor sauna and pool can be used if there is no private bookings
+  - Hiking trails to Nuuksio National Park leave right from the hotel yard<br>
+    <https://www.luontoon.fi/en/destinations/nuuksio-national-park>
+
+# Special events
+
+- Tue 23.6. 19:30--: **Get together and lighting talks** in Loimu room
+- Wed 24.6. 16:30--18:00: **Nuuksio Olympic Games**, meetup at the lobby
+- Wed 24.6. 20:00--: **Lake Sauna** reserved for us
+- Fri 26.6. 20:00--: **Lake Sauna** reserved for us
+- Sat 27.6. 15:30--18:30: **Visit to beehives** (three groups x 1 h)
+- Mon 29.6. 20:00--: **Lake Sauna** reserved for us
+- Wed 1.7. 16:00--18:00: **Boating at the lake**, meetup at the hotel lobby
+- Wed 1.7. 19:00--: **Farewell dinner and party** in Hopeapaju room
 
 # Attendance list
 
@@ -118,7 +139,7 @@ Map: <https://www.retkikartta.fi/> (Good for hiking!)
 
 # Learning outcomes
 
-- The goal is to build HPC expertise up to an intermediate/semi-advanced level during the school.
+- The goal is to build HPC expertise up to an intermediate/semi-advanced level during the school
 - After the summer school, participants should be able to:
   - Identify main parallel programming concepts
   - Create parallel MPI programs with C, C++, or Fortran programming languages
@@ -154,19 +175,6 @@ Map: <https://www.retkikartta.fi/> (Good for hiking!)
   - Schedule, practical information (in [wiki](https://github.com/csc-training/summerschool/wiki))
 - Feel free to fork the repository for your own use
 - After the school, a static copy of the content will be published as a release under GitHub
-
-# It's 15th CSC Summer School in HPC!
-
-<center>
-2010, 2011, 2012, 2013, 2014,<br>
-2015, 2016, 2017, 2018, 2019,<br>
-<del>2020</del>, <del>2021</del>,<br>
-[2022](https://csc.fi/en/news/the-summer-school-is-built-on-learning-high-performance-computing-and-doing-things-together/),
-[2023](https://csc.fi/en/story/summer-school-brings-together-learners-interested-in-high-performance-computing/),
-[2024](https://csc.fi/en/story/csc-summer-school-2024-high-performance-computing-in-nuuksio-national-park/),
-[2025](https://csc.fi/en/story/summer-school-brings-together-computing-collaboration-and-nature/),
-2026!
-</center>
 
 
 # Welcome to the school!
