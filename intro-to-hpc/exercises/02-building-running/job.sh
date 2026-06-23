@@ -9,5 +9,10 @@
 #SBATCH --mem-per-cpu=1G
 #SBATCH --time=00:05:00
 
+# make sure there's no preset variables
+unset SLURM_MEM_PER_NODE
+unset SLURM_MEM_PER_GPU
+unset SLURM_MEM_PER_CPU
+
 # Run the program
 srun ./code/prog.x
