@@ -9,7 +9,7 @@
 int main(int argc, char *argv[]) {
 
     constexpr int arraysize = 100000;
-    constexpr int msgsize = 100;
+    constexpr int msgsize = 100000;
     std::vector<int> message(arraysize);
     std::vector<int> receiveBuffer(arraysize);
 
@@ -34,16 +34,19 @@ int main(int argc, char *argv[]) {
     // Send 'msgsize' integers from the array "message",
     // and receive the same number of integers into "receiveBuffer".
     // You may hardcode the message passing to happen between ranks 0 and 1.
+    int message_tag = 0;
 
     if (rank == 0) {
 
-        // ... your code here ...
-
+        MPI_Send(message.data(), msgsize, MPI_INT, 1, message_tag, MPI_COMM_WORLD);
+        MPI_Recv(receiveBuffer.data(), msgsize, MPI_INT, 1, message_tag, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+        
         printf("Rank %i received %i elements, first %i\n", rank, msgsize, receiveBuffer[0]);
     }
     else if (rank == 1) {
 
-        // .. your code here ...
+        MPI_Recv(receiveBuffer.data(), msgsize, MPI_INT, 0, message_tag, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+        MPI_Send(message.data(), msgsize, MPI_INT, 0, message_tag, MPI_COMM_WORLD);
 
         printf("Rank %i received %i elements, first %i\n", rank, msgsize, receiveBuffer[0]);
     }

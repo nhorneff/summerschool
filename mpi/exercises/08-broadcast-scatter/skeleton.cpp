@@ -5,6 +5,7 @@
 #include <cstdio>
 #include <vector>
 #include <mpi.h>
+#include <iostream>
 
 #define MAX_PRINT_SIZE 12
 
@@ -33,6 +34,47 @@ int main(int argc, char *argv[])
 
     /* Send everywhere */
     // TODO: Implement the broadcast of the array buf
+    /* Send everywhere */
+    const int tag = 0;
+    // broadcast
+    // if (rank == 0) {
+    //     for (int dest = 1; dest < size; dest++) {
+    //         MPI_Send(buf.data(), buf.size(), MPI_INT, dest, tag, MPI_COMM_WORLD);
+    //     }
+    // } else {
+    //     MPI_Recv(buf.data(), buf.size(), MPI_INT, 0, tag, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+    // }
+    // scatter
+    int bufLengthPerProcess = buf.size() / size;
+    std::vector<int> localBuf(bufLengthPerProcess);
+    // with mpi send/recv
+    // if (rank == 0) {
+    //     // Keep block 0
+    //     for (int i = 0; i < bufLengthPerProcess; i++)
+    //     localBuf[i] = buf[i];
+    //     // Send remaining blocks
+    //     for (int dest = 1; dest < size; dest++) {
+    //         int localIndexStart = dest * bufLengthPerProcess;
+    //         std::cout << localIndexStart << std::endl;
+    //         MPI_Send(buf.data()+localIndexStart, bufLengthPerProcess, MPI_INT, dest, tag, MPI_COMM_WORLD);
+    //     }
+    // } else {
+    //     MPI_Recv(localBuf.data(), bufLengthPerProcess, MPI_INT, 0, tag, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+    // }
+    // with mpi_scatter
+    MPI_Scatter(buf.data(), bufLengthPerProcess, MPI_INT,
+            localBuf.data(), bufLengthPerProcess, MPI_INT,
+            0, MPI_COMM_WORLD);
+    // Copy localBuf back into buf only for printing
+    for (int i = 0; i < buf.size(); i++) {
+        buf[i] = -1;
+    }
+
+    for (int i = 0; i < bufLengthPerProcess; i++) {
+        buf[i] = localBuf[i];
+    }
+    // broadcast
+    // MPI_Bcast(buf.data(), buf.size(), MPI_INT, 0, MPI_COMM_WORLD);
 
     /* End timing */
     double t1 = MPI_Wtime();

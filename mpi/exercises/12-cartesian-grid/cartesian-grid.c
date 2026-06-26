@@ -42,13 +42,17 @@ int main(int argc, char* argv[]) {
     }
 
     /* Create the 2D Cartesian communicator */
-    /* TODO */
+    int reorder = 0;
+    MPI_Cart_create(MPI_COMM_WORLD, 2, dims, period, reorder, &comm2d);
+
+    MPI_Comm_rank(comm2d, &crank);
 
     /* Find out and store the neighboring ranks */
-    /* TODO */
+    MPI_Cart_shift(comm2d, 0, 1, &neighbors[0], &neighbors[1]);
+    MPI_Cart_shift(comm2d, 1, 1, &neighbors[2], &neighbors[3]);
 
     /* Find out and store also the Cartesian coordinates of a rank */
-    /* TODO */
+    MPI_Cart_coords(comm2d, crank, 2, coords);
 
     for (irank = 0; irank < ntasks; irank++) {
         if (crank == irank) {

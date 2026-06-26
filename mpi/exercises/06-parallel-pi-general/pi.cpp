@@ -31,6 +31,8 @@ int main(int argc, char** argv)
         printf("Computing approximation to pi with N=%d\n", n);
     }
 
+    std::cout << "rank" << rank << std::endl;
+
     int istart = rank * n / ntasks + 1;
     int istop  = (rank + 1) * n / ntasks;
 
