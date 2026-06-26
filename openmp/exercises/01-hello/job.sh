@@ -10,7 +10,7 @@
 #SBATCH --time=00:05:00
 
 # Set the number of threads based on cpus-per-task
-export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK:-1}
+export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
 
 # Run the program
 srun ./hello.x
