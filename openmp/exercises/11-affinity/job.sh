@@ -10,12 +10,15 @@
 #SBATCH --time=00:05:00
 
 # Set the number of threads based on cpus-per-task
-export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK:-1}
+export OMP_NUM_THREADS=2 # ${SLURM_CPUS_PER_TASK:-1}
 
 # Place and bind threads to single hardware threads
 # Comment the following lines if binding is not desired
-#export OMP_PLACES=cores
-#export OMP_PROC_BIND=spread
+export OMP_PLACES=cores
+export OMP_PROC_BIND=spread
+
+export OMP_DISPLAY_AFFINITY=true
+export OMP_AFFINITY_FORMAT="Process %P level %L thread %0.4n/%0.4N on node %H core %A"
 
 # Run the program
-srun ./hello.x
+srun ./hello

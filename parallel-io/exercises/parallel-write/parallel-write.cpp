@@ -32,7 +32,7 @@ void single_writer(const std::vector<int>& localData, const char* filename) {
 
 void collective_write(const std::vector<int>& localData, const char* filename) {
     // TODO: Like single_writer(), but implement a parallel write using MPI_File_write_at_all()
-
+    MPI_File_write_at_all();
 }
 
 int main(int argc, char **argv) {
